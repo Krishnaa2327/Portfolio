@@ -1,10 +1,10 @@
-# DEVAL.exe // AI/ML ENGINEER PORTFOLIO
+# KRISHNA.exe // AI/ML ENGINEER PORTFOLIO
 
 ```
- ____  _____ _____ _____ __              _____ _____ _____ _____ _____ _____ __    _____ _____ 
-|    \|   __|  |  |  _  |  |      ___   |  _  |     | __  |_   _|   __|     |  |  |     |     |
-|  |  |   __|  |  |     |  |__   |___|  |   __|  |  |    -| | | |   __|  |  |  |__|-   -|  |  |
-|____/|_____|\___/|__|__|_____|         |__|  |_____|__|__| |_| |__|  |_____|_____|_____|_____|
+           _____ _____ _____ _____ _____ _____ __    _____ _____ 
+          |  _  |     | __  |_   _|   __|     |  |  |     |     |
+          |   __|  |  |    -| | | |   __|  |  |  |__|-   -|  |  |
+          |__|  |_____|__|__| |_| |__|  |_____|_____|_____|_____|
                                                                                                             
 >> SYSTEM_STATUS: ONLINE
 >> THEME: NEO_BRUTALISM
@@ -12,7 +12,7 @@
 >> VERSION: 2.0.0
 ```
 
-> **WARNING**: This is NOT a standard portfolio. It showcases real ML/AI projects with a raw, unfiltered NeoBrutalist design. No cookies. No trackers. Just pure HTML, CSS, and JS with ML expertise.
+> **WARNING**: This is NOT a standard portfolio. It showcases AI/ML and software projects with a raw, unfiltered NeoBrutalist design. No cookies. No trackers. Just pure HTML, CSS, and JS.
 
 ---
 
@@ -31,15 +31,32 @@ It's not about being pretty. It's about being **BOLD**.
 
 ## /// TECH_STACK
 
-### ML/AI Skills
+### AI/ML + Software Skills
 | CATEGORY | TECHNOLOGIES |
 | :--- | :--- |
-| **LANGUAGES** | Python |
-| **ML LIBRARIES** | Scikit-learn, TensorFlow, XGBoost |
-| **DATA PROCESSING** | Pandas, NumPy |
-| **FRAMEWORKS** | Django, FastAPI, Streamlit |
-| **ML OPS** | MLflow, Grid Search |
-| **DOMAINS** | NLP, Deep Learning, Computer Vision |
+| **LANGUAGES** | Python, C++ |
+| **AI/ML** | Scikit-learn, Pandas, NumPy, Reinforcement Learning |
+| **BACKEND** | FastAPI, Node.js |
+| **DATA** | SQL, PostgreSQL |
+| **GENAI** | LLM, RAG, Agents, MCP |
+| **FRONTEND** | React.js, Tailwind CSS |
+
+---
+
+## /// DEPLOYMENT (VERCEL)
+
+1. Push this project to a GitHub repository.
+2. In Vercel: **Add New Project** → import the GitHub repo.
+3. Framework preset: **Other** (this is a static HTML site).
+4. Build command: *(leave empty)*
+5. Output directory: *(leave empty)*
+6. Deploy.
+
+After deploy, update these placeholders:
+- `index.html`: set **canonical**, **og:url**, **twitter:url**, and JSON-LD `url`
+- `robots.txt` + `sitemap.xml`: set your live domain
+
+Live URL (current): `https://krisshhh-portfolio.vercel.app/`
 
 ---
 
@@ -79,23 +96,25 @@ It's not about being pretty. It's about being **BOLD**.
 ```bash
 .
 ├── Assets/
-│   ├── images/          # [DIR] Project thumbnails & Avatar
-│   └── Resume/          # [DIR] CV PDF file
+│   ├── images/          # [DIR] Project thumbnails, OG image & Avatar
+│   └── Resume/          # [DIR] Resume PDF
 ├── index.html           # [FILE] Main Entry Point
+├── robots.txt           # [FILE] SEO crawling rules
+├── sitemap.xml          # [FILE] Site map for search engines
 └── README.md            # [FILE] You are here
 ```
 
 ## /// CONTACT_COORDINATES
 
 **TRANSMISSION OPEN:**
-- **MAIL**: `devaldaki@gmail.com`
-- **GITHUB**: `devaldaki3`
-- **LINKEDIN**: `linkedin.com/in/devaldaki/`
-- **LEETCODE**: `2kiyXKAFs1`
-- **TWITTER**: `@deval_daki`
-- **LOCATION**: `India / Remote Available`
+- **MAIL**: `krishnachaudhari@gmail.com`
+- **GITHUB**: `github.com/Krishnaa2327`
+- **LINKEDIN**: `linkedin.com/in/krishna-chaudhari-b386702bb/`
+- **LEETCODE**: `leetcode.com/u/Krishna_2327/`
+- **TWITTER**: `(placeholder)`
+- **LOCATION**: `Pune, India / Remote Available`
 
-> "I design machine learning systems for real world impact."
+> "I build AI/ML systems and practical tools."
 
 ---
-**© 2026 DEVAL.exe // AI/ML ENGINEER // SYSTEM_END**
+**© 2026 KRISHNA.exe // AI/ML ENGINEER // SYSTEM_END**

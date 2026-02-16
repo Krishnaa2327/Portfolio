@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://deval-portfolio.netlify.app/sitemap.xml
+Sitemap: https://krisshhh-portfolio.vercel.app/sitemap.xml
