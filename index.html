@@ -95,6 +95,9 @@
       }
     </script>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link
@@ -1579,36 +1582,34 @@
                 </div>
 
                 <form 
-                    name="contact"
-                    method="POST"
-                    action="YOUR-FORM-ENDPOINT"
+                    id="contact-form"
                     class="space-y-4 bg-gray-50 p-6 border-2 border-black">
-                    <!-- TODO: Replace YOUR-FORM-ENDPOINT with your form handler (Vercel Serverless Function, Formspree, etc.) -->
                     
                     <!-- Honeypot field for spam protection (hidden from users) -->
                     <div style="display: none;">
-                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        <label>Don't fill this out if you're human: <input name="bot-field" id="bot-field" /></label>
                     </div>
                     
                     <div class="flex flex-col">
                         <label class="font-mono font-bold mb-1 uppercase text-xs">Name</label>
-                        <input type="text" name="name" placeholder="NAME / COMPANY" required
+                        <input type="text" name="from_name" id="from_name" placeholder="NAME / COMPANY" required
                             class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover">
                     </div>
                     <div class="flex flex-col">
                         <label class="font-mono font-bold mb-1 uppercase text-xs">Email</label>
-                        <input type="email" name="email" placeholder="EMAIL ADDRESS" required
+                        <input type="email" name="from_email" id="from_email" placeholder="EMAIL ADDRESS" required
                             class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover">
                     </div>
                     <div class="flex flex-col">
                         <label class="font-mono font-bold mb-1 uppercase text-xs">Message</label>
-                        <textarea rows="4" name="message" placeholder="PROJECT DETAILS..." required
+                        <textarea rows="4" name="message" id="message" placeholder="PROJECT DETAILS..." required
                             class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all resize-none cursor-hover"></textarea>
                     </div>
-                    <button type="submit"
+                    <button type="submit" id="submit-btn"
                         class="w-full bg-neo-blue text-white font-black text-xl py-4 border-2 border-black shadow-hard neo-button hover:bg-neo-black hover:translate-y-1 hover:shadow-none transition-all cursor-hover">
                         SEND MESSAGE
                     </button>
+                    <p id="form-status" class="font-mono text-sm text-center hidden"></p>
                 </form>
             </div>
         </div>
@@ -1829,6 +1830,43 @@
         let scrolled = (winScroll / height) * 100;
         document.getElementById("progressBar").style.width = scrolled + "%";
       };
+
+      // EmailJS Integration
+      emailjs.init("WRZIpAFB7Or1yAu7l");
+
+      document.getElementById("contact-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // Honeypot check
+        if (document.getElementById("bot-field").value) return;
+
+        const btn = document.getElementById("submit-btn");
+        const status = document.getElementById("form-status");
+        btn.disabled = true;
+        btn.textContent = "SENDING...";
+
+        emailjs.sendForm("service_rpxe8nb", "template_fo0my7q", this)
+          .then(function() {
+            status.textContent = "MESSAGE SENT SUCCESSFULLY!";
+            status.className = "font-mono text-sm text-center text-neo-green font-bold";
+            btn.textContent = "SENT!";
+            btn.classList.remove("bg-neo-blue");
+            btn.classList.add("bg-neo-green", "text-black");
+            document.getElementById("contact-form").reset();
+            setTimeout(function() {
+              btn.disabled = false;
+              btn.textContent = "SEND MESSAGE";
+              btn.classList.remove("bg-neo-green", "text-black");
+              btn.classList.add("bg-neo-blue");
+              status.className = "font-mono text-sm text-center hidden";
+            }, 3000);
+          }, function(error) {
+            status.textContent = "FAILED TO SEND. TRY AGAIN.";
+            status.className = "font-mono text-sm text-center text-neo-red font-bold";
+            btn.disabled = false;
+            btn.textContent = "SEND MESSAGE";
+          });
+      });
     </script>
   </body>
 </html>
