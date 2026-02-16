@@ -56,7 +56,7 @@ After deploy, update these placeholders:
 - `index.html`: set **canonical**, **og:url**, **twitter:url**, and JSON-LD `url`
 - `robots.txt` + `sitemap.xml`: set your live domain
 
-Live URL (current): `https://krisshhh-portfolio.vercel.app/`
+Live URL (current): `https://krisshhh.vercel.app/`
 
 ---
 
